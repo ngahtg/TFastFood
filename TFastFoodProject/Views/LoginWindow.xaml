@@ -1,0 +1,227 @@
+﻿<Window x:Class="TFastFoodProject.Views.LoginWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TFastFoodProject"
+        mc:Ignorable="d"
+        Title="TFastFood Staff Login" 
+        Height="550" Width="400"
+        ResizeMode="NoResize"
+        WindowStartupLocation="CenterScreen">
+
+    <!-- Define basic styles for the interface -->
+    <Window.Resources>
+        <!-- Color definitions -->
+        <SolidColorBrush x:Key="PrimaryColor" Color="#FF6F00"/>
+        <!-- Bright Orange, Dynamic -->
+        <SolidColorBrush x:Key="PrimaryDarkColor" Color="#E65100"/>
+        <!-- Dark Orange for Pressed state -->
+        <SolidColorBrush x:Key="AccentColor" Color="#FFA000"/>
+        <!-- Accent Orange -->
+        <SolidColorBrush x:Key="BackgroundColor" Color="#F5F5F5"/>
+        <SolidColorBrush x:Key="BorderColor" Color="#DDDDDD"/>
+        <SolidColorBrush x:Key="TextColor" Color="#333333"/>
+        <SolidColorBrush x:Key="PlaceholderColor" Color="#AAAAAA"/>
+
+        <!-- Style for TextBox (Now includes the always-visible icon) -->
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type TextBox}">
+                        <Border x:Name="border" 
+                                CornerRadius="8" 
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <!-- Icon (User) - Always Visible, just like PasswordBox -->
+                                <TextBlock Text="👤" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="{StaticResource PlaceholderColor}" IsHitTestVisible="False"/>
+                                <!-- Content Host (Input text starts after the icon space) -->
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" 
+                                              HorizontalScrollBarVisibility="Hidden" 
+                                              VerticalScrollBarVisibility="Hidden"
+                                              Margin="30,0,0,0"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource PrimaryColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource PrimaryDarkColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style for PasswordBox (No changes needed, the icon logic was already correct) -->
+        <Style TargetType="{x:Type PasswordBox}">
+            <Setter Property="Background" Value="{StaticResource BackgroundColor}"/>
+            <Setter Property="Padding" Value="10,8"/>
+            <Setter Property="Margin" Value="0,5"/>
+            <Setter Property="BorderBrush" Value="{StaticResource BorderColor}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+            <Setter Property="FontSize" Value="14"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type PasswordBox}">
+                        <Border x:Name="border" 
+                                CornerRadius="8" 
+                                Background="{TemplateBinding Background}"
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}">
+                            <Grid>
+                                <!-- Icon (Lock) - Always Visible -->
+                                <TextBlock Text="🔒" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="10,0,0,0" Foreground="{StaticResource PlaceholderColor}" IsHitTestVisible="False"/>
+                                <ScrollViewer x:Name="PART_ContentHost" Focusable="False" 
+                                              HorizontalScrollBarVisibility="Hidden" 
+                                              VerticalScrollBarVisibility="Hidden"
+                                              Margin="30,0,0,0"/>
+                            </Grid>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource PrimaryColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsFocused" Value="True">
+                                <Setter TargetName="border" Property="BorderBrush" Value="{StaticResource PrimaryDarkColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+
+        <!-- Style for the main Button -->
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{StaticResource PrimaryColor}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="15,10"/>
+            <Setter Property="Margin" Value="0,20,0,10"/>
+            <Setter Property="Cursor" Value="Hand"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="Border" 
+                                Background="{TemplateBinding Background}" 
+                                CornerRadius="10">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="{StaticResource AccentColor}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter TargetName="Border" Property="Background" Value="{StaticResource PrimaryDarkColor}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+        <!-- Style for regular TextBlock -->
+        <Style TargetType="{x:Type TextBlock}">
+            <Setter Property="Foreground" Value="{StaticResource TextColor}"/>
+        </Style>
+
+        <!-- Style for Hyperlink -->
+        <Style TargetType="{x:Type Hyperlink}">
+            <Setter Property="Foreground" Value="{StaticResource PlaceholderColor}"/>
+            <Setter Property="TextDecorations" Value="None"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource PrimaryColor}"/>
+                    <Setter Property="TextDecorations" Value="Underline"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+    </Window.Resources>
+
+    <!-- Main Background with Gradient -->
+    <Grid>
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0.5,0" EndPoint="0.5,1">
+                <GradientStop Color="#FFB74D" Offset="0.0"/>
+                <!-- Lighter Orange -->
+                <GradientStop Color="#FF9800" Offset="1.0"/>
+                <!-- Slightly Darker Orange -->
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Login Card Border -->
+        <Border Width="320" 
+                Background="White" 
+                CornerRadius="15">
+            <Border.Effect>
+                <DropShadowEffect ShadowDepth="5" 
+                                  Opacity="0.2" 
+                                  Color="#AAAAAA" 
+                                  BlurRadius="15" 
+                                  Direction="270"/>
+            </Border.Effect>
+
+            <StackPanel Margin="30">
+
+                <!-- Logo/Icon Area -->
+                <TextBlock Text="🍔" 
+                           FontSize="48" 
+                           HorizontalAlignment="Center" 
+                           Margin="0,0,0,10"/>
+
+                <!-- Title -->
+                <TextBlock Text="TFastFood" 
+                           FontSize="28" 
+                           FontWeight="SemiBold" 
+                           HorizontalAlignment="Center" 
+                           Foreground="{StaticResource TextColor}" 
+                           Margin="0,0,0,5"/>
+
+                <!-- Subtitle (Staff Context) -->
+                <TextBlock Text="Staff Login - Access Management" 
+                           FontSize="14" 
+                           HorizontalAlignment="Center" 
+                           Foreground="{StaticResource PlaceholderColor}" 
+                           Margin="0,0,0,30"/>
+
+                <!-- Label & Input for Username/Email -->
+                <TextBlock Text="Username / Email" 
+                           Margin="0,15,0,5" 
+                           Foreground="{StaticResource TextColor}" 
+                           FontSize="13"/>
+                <TextBox x:Name="txtUsername" Tag="Enter Username or Email"/>
+
+                <!-- Label & Input for Password -->
+                <TextBlock Text="Password" 
+                           Margin="0,15,0,5" 
+                           Foreground="{StaticResource TextColor}" 
+                           FontSize="13"/>
+                <PasswordBox x:Name="pwdPassword"/>
+
+                <!-- NOTE: CheckBox for 'Remember Me' removed as per new XAML structure. -->
+
+                <!-- Main Login Button -->
+                <Button Content="Login" Click="Button_Click" Margin="20 30 20 0"  IsDefault="True" Style="{StaticResource AppButtonStyle}" />
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>
