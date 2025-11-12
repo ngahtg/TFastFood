@@ -92,7 +92,7 @@
               "RelativeDocumentMoniker": "TFastFoodProject\\Employee\\EmployeeManager\\OrderManagerWindow.xaml.cs",
               "ToolTip": "C:\\Users\\tung\\source\\repos\\TFastFood\\TFastFoodProject\\Employee\\EmployeeManager\\OrderManagerWindow.xaml.cs",
               "RelativeToolTip": "TFastFoodProject\\Employee\\EmployeeManager\\OrderManagerWindow.xaml.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAmwDkAAACDAAAAAAAAAA==",
+              "ViewState": "AgIAAOUAAAAAAAAAAAAqwLkAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-12T08:00:48.089Z",
               "EditorCaption": ""
@@ -106,7 +106,8 @@
               "ToolTip": "C:\\Users\\tung\\source\\repos\\TFastFood\\TFastFoodProject\\Employee\\EmployeeManager\\OrderManagerWindow.xaml",
               "RelativeToolTip": "TFastFoodProject\\Employee\\EmployeeManager\\OrderManagerWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-11T12:10:10.81Z"
+              "WhenOpened": "2025-11-11T12:10:10.81Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -118,7 +119,8 @@
               "RelativeToolTip": "TFastFoodProject\\Employee\\EmployeeManager\\OrderDetailWindow.xaml.cs",
               "ViewState": "AgIAACgBAAAAAAAAAAAYwDUBAAASAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-11T12:28:27.057Z"
+              "WhenOpened": "2025-11-11T12:28:27.057Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -129,7 +131,8 @@
               "ToolTip": "C:\\Users\\tung\\source\\repos\\TFastFood\\TFastFoodProject\\Employee\\EmployeeManager\\OrderDetailWindow.xaml",
               "RelativeToolTip": "TFastFoodProject\\Employee\\EmployeeManager\\OrderDetailWindow.xaml",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-11-11T12:10:12.4Z"
+              "WhenOpened": "2025-11-11T12:10:12.4Z",
+              "EditorCaption": ""
             }
           ]
         }
