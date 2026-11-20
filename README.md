@@ -4,7 +4,7 @@
 TFastFood là ứng dụng quản lý bán đồ ăn nhanh dành cho quán phục vụ ô tô, được phát triển bằng C# (.NET) với giao diện WPF hiện đại.
 Hệ thống hỗ trợ quản lý sản phẩm, khách hàng, nhân viên, đơn hàng và doanh thu, giúp tối ưu quy trình phục vụ, đặt món và theo dõi kinh doanh một cách hiệu quả.
 
-Ứng dụng sử dụng MySQL làm cơ sở dữ liệu chính và LINQ để truy vấn, xử lý dữ liệu nhanh chóng, trực quan.
+Ứng dụng sử dụng SQL Server làm cơ sở dữ liệu chính và LINQ để truy vấn, xử lý dữ liệu nhanh chóng, trực quan.
 
 ⚙️ Công nghệ sử dụng
 
@@ -12,7 +12,7 @@ C# (.NET) – Ngôn ngữ chính phát triển ứng dụng desktop.
 
 WPF (Windows Presentation Foundation) – Thiết kế giao diện người dùng trực quan, hiện đại.
 
-MySQL – Lưu trữ và quản lý dữ liệu sản phẩm, đơn hàng, người dùng.
+SQL Server + Entity Framework Core – Lưu trữ và quản lý dữ liệu sản phẩm, đơn hàng, người dùng.
 
 LINQ – Hỗ trợ truy vấn, xử lý dữ liệu hiệu quả và dễ đọc hơn.
 
@@ -34,6 +34,12 @@ Làm quen và thực hành lập trình ứng dụng C# .NET.
 
 Hiểu rõ quy trình thiết kế giao diện và xử lý sự kiện với WPF.
 
-Thành thạo kết nối, truy vấn và thao tác dữ liệu bằng MySQL & LINQ.
+Thành thạo kết nối, truy vấn và thao tác dữ liệu bằng SQL Server & LINQ.
 
 Phát triển kỹ năng xây dựng ứng dụng quản lý bán hàng thực tế, đáp ứng nhu cầu của cửa hàng đồ ăn nhanh.
+
+## ▶️ Cách chạy
+
+1. Yêu cầu: .NET 8 SDK, SQL Server.
+2. Mở `TFastFoodProject/appsettings.json`, thay `YOUR_DB_PASSWORD` bằng mật khẩu SQL Server.
+3. Mở `TFastFood.sln` trong Visual Studio 2022 và chạy (F5).
